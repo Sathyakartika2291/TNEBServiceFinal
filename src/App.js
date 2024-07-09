@@ -1,12 +1,13 @@
 
-import Register from "./pages/Register";
+import React from 'react';
+import Routing from './pages/Routing';
 
-function App() {
-  return (
-    <div className="App">
-      <Register/>
+const App = () => {
+    return (
+        <div className="App">
+            <Routing />
         </div>
-  );
+    );
 }
 
 export default App;
