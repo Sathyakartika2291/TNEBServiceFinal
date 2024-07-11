@@ -1,5 +1,5 @@
 .register-hed{
-           max-width: 500px;
+           max-width: 1500px;
             margin:auto;
              padding-bottom: 30px;
             border: 1px solid #eee;
@@ -8,7 +8,7 @@
         background-color:whitesmoke;
 }
 .container{
-    background-color:hsl(211, 90%, 23%);
+    background-color:hsl(200, 10%, 94%);
 }
 .input-container {
     display: -ms-flexbox; /* IE10 */

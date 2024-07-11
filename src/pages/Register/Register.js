@@ -133,7 +133,7 @@ export default function Register() {
                         </div>
                         <div className="clearfix"></div>
                         <div className="form-group px-5">
-                            Already have an account? Please <a href="https://localhost:44372/Signup/Signup">Login</a>
+                            Already have an account? Please <a href="./login">Login</a>
                         </div>
                     </form>
                 </div>
