@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Register from './Register/Register';
 import Login from './Login/Login';
 import Home from './Home/Home';
-import ServiceList from '../ServiceList/ServiceList';
+import ServiceList from './ServiceList/ServiceList';
 import Service from './Service/Service';
 const Routing = () => {
     return (
