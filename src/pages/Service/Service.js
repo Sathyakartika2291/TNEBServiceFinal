@@ -2,7 +2,9 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './Service.css';
+import { useParams } from 'react-router-dom';
 export default function Service() {
+    const { loginid } = useParams();
     const initialStateErrors = {
         CRUDType: 1,
         ServiceName: { required: false },
@@ -50,7 +52,7 @@ export default function Service() {
                     ServiceName: inputs.ServiceName,
                     ServiceNumber: inputs.ServiceNumber,
                     Remarks: inputs.Remarks,
-                    SignupId: 3,
+                    SignupId: loginid,
                 });
 
                 if (response.data.success) {

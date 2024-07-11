@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 
 export default function ServiceList() {
     const [serviceList, setServiceList] = useState([]);
@@ -43,7 +44,6 @@ export default function ServiceList() {
                         <th>Service Name</th>
                         <th>Service Number</th>
                         <th>Remarks</th>
-                       
                     </tr>
                 </thead>
                 <tbody>
@@ -51,9 +51,10 @@ export default function ServiceList() {
                         <tr key={service.serviceid}>
                             <td>{service.serviceid}</td>
                             <td>{service.servicename}</td>
-                            <td>{service.servicenumber}</td>
+                            <td>
+                                <Link to={`/servicelist/${service.servicenumber}`}>{service.servicenumber}</Link>
+                            </td>
                             <td>{service.remarks}</td>
-                            
                         </tr>
                     ))}
                 </tbody>

@@ -2,9 +2,10 @@
 import './Login.css';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+
 import axios from 'axios';
 export default function Login() {
-
+ 
     const initialStateErrors = {
         userName: { required: false },
          password: { required: false },
@@ -46,7 +47,9 @@ if (!hasError) {
 
         if (response.data.success) {
             alert('Login successful!');
-            navigate('/service');
+            // navigate('/service');
+            const loginid = response.data.loginList[0].loginid; // Assuming loginid is in the first item of loginList array
+            navigate(`/service/${loginid}`);
         } else {
             setErrors({ ...newErrors, customerror: response.data.message });
         }
