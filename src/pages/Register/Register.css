@@ -1,31 +1,29 @@
-.register-hed{
-           max-width: 1500px;
-            margin:auto;
-             padding-bottom: 30px;
-            border: 1px solid #eee;
+
+
+
+
+
+*{
+  margin:0%;
+  padding: 0%;
+  box-sizing: border-box;
+ }
+
+ body{
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  align-items: center;
+  background-color:azure;
+ }
+ .container-register{
+  background-color:hsl(230, 33%, 41%);; ;
+ }
+.wrapper{
+  width:450px;
+  background-color: honeydew;
+  border: 1px solid #eee;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-          height: 900px;
-        background-color:whitesmoke;
 }
-.container{
-    background-color:hsl(200, 10%, 94%);
-}
-.input-container {
-    display: -ms-flexbox; /* IE10 */
-    display: flex;
-    width: 100%;
-    margin-bottom: 15px;
-  }
-  .icon {
-    padding: 10px;
-    background-color:hsl(211, 90%, 23%);
-    min-width: 50pxground;
-    color: white;;
-    text-align: center;
-  }
-  ::-ms-input-placeholder {
-    color:black
-  }
-.registerPage{
-    background-color:rgb(221, 236, 255);
-}
+
+
