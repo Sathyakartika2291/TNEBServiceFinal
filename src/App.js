@@ -4,7 +4,7 @@ import Routing from './pages/Routing';
 
 const App = () => {
     return (
-        <div className="App">
+        <div >
             <Routing />
         </div>
     );

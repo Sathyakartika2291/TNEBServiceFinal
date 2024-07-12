@@ -2,7 +2,38 @@ import { useState } from 'react';
 import './Register.css';
 import axios from 'axios';
 
+// import styled from 'styled-components';
+
+
+
 export default function Register() {
+//     const register= styled.div`
+//     width: 100vw;  / Full width of the viewport /
+//     height: 100vh; / Full height of the viewport /
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     background-color: #f0f0f0; / Adjust as needed /
+//   `;
+  
+//   const wrapper = styled.div`
+//     width: 100%;
+//     max-width: 500px; / Adjust the max-width as needed /
+//     background-color: #e0ffe0; / Adjust as needed /
+//     padding: 20px;
+//     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+//     border-radius: 8px;
+//   `;
+
+
+
+
+
+
+
+
+
+
     const initialStateErrors = {
         userName: { required: false },
         phonenumber: { required: false },
@@ -74,11 +105,11 @@ export default function Register() {
 
     return (
         <section className="registerPage">
-            <div className="wrapper">
-                <div className="container-register">
-
-                    <h1 className="fw-bolder text-center text-white p-4">Register Here</h1>
-                </div>
+             
+            <div className='container-fluid register'>
+            <div className="wrapper align-center">   
+                                <h1 className="fw-bolder text-center text-primary p-4">Register Here</h1>
+                        
                 <form onSubmit={handleSubmit} className="register-form" action="">
                     <div className="row form-group"></div>
                     <label htmlFor="userName" className="text-uppercase text-center px-5">UserName</label>
@@ -135,8 +166,10 @@ export default function Register() {
                     <div className="form-group px-5">
                         Already have an account? Please <a href="./login">Login</a>
                     </div>
+
                 </form>
-            </div>
+                </div>
+           </div>
         </section >
     );
 }

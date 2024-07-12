@@ -6,14 +6,17 @@ import Home from './Home/Home';
 import ServiceList from './ServiceList/ServiceList';
 import Service from './Service/Service';
 import ServiceDetail from './ServiceList/ServiceDetails';
+import Header from './Header/Header';
 const Routing = () => {
     return (
         <div className="container">
             <BrowserRouter>
             {/* {/ {<Home/>}//header     /} */}
-        
+            <Header />
                 <Routes>
+               
                 <Route path="/" element={<Home />} />
+                {/* <Route path="/"  element={<Header />} /> */}
                     <Route path="/login"  element={<Login />} />
                     {/* <Route path="/header"  element={<header />} /> */}
                     <Route path="/register" element={<Register />} />
