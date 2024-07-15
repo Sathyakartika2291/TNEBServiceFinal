@@ -43,10 +43,10 @@ export default function ServiceDetail() {
 
     return (
         <div className="container">
-            <h1>Service Detail</h1>
-            <table className="table table-striped">
+            <h1 className="text-uppercase text-primary text-center p-4">Service Detail</h1>
+            <table className="table table-striped hover">
                 <thead>
-                    <tr>
+                    <tr className="text-uppercase">
                     <th>Date</th>
                         <th>Entry Date</th>
                         <th>Status</th>

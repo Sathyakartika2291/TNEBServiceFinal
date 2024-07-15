@@ -77,10 +77,9 @@ export default function Service() {
 
     return (
         <section className="servicePage">
-            <div className="container-fluid">
-                <div className="register-hed">
+              <div className="register-hed">
                     <div className="container">
-                        <h1 className="fw-bolder text-center text-white p-4">Service</h1>
+                        <h1 className="fw-bolder text-uppercase text-primary text-center p-4">Service</h1>
                     </div>
                     <form onSubmit={handleSubmit} className="service-form" action="">
                         <div className="row form-group"></div>
@@ -130,7 +129,6 @@ export default function Service() {
                         </div>
                     </form>
                 </div>
-            </div>
         </section>
     );
 }

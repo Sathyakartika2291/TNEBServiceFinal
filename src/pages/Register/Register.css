@@ -9,24 +9,17 @@
   justify-content: center;
   min-height: 100vh; 
   align-items: center;
-  background-color:azure;
  }
- .container-register{
-  background-color:hsl(230, 33%, 41%);; ;
- }
+
 .wrapper{
   width: 100%;
   display: block;
-  background-color: honeydew;
-  border: 1px solid #eee;
- box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 }
 
 
 
 .icon {
   padding: 10px;
-  background-color:hsl(230, 33%, 41%);
   min-width: 50pxground;
   color: white;;
   text-align: center;
@@ -35,7 +28,6 @@
   display: -ms-flexbox; 
   display: flex;
   width: 100%;
-  background: transparent;
   margin-bottom: 15px;
  }
  .btn{
