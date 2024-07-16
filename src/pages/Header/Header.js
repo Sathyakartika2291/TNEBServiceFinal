@@ -35,7 +35,7 @@ export default function Header() {
         <a class="nav-link" href="/login">Login</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/ServiceList">ServiceList</a>
+        <a class="nav-link" href="/ServiceCollection">ServiceList</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/">Signout</a>

@@ -4,31 +4,17 @@ import { Link } from 'react-router-dom';
 import { FaEdit, FaTrash } from 'react-icons/fa';
 import { Modal, Button, Form } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { useParams } from 'react-router-dom';
-
-export default function ServiceList() {
-    const { loginid } = useParams();
+export default function ServiceCollection() {
     const [serviceList, setServiceList] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const [showModal, setShowModal] = useState(false);
-    const [currentService, setCurrentService] = useState({
-        servicename: '',
-        servicenumber: '',
-        remarks: ''
-    });
+    const [currentService, setCurrentService] = useState(null);
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.post('https://localhost:44372/Service/ServiceListById', {
-                    CRUDType: 2, // Fetch all services
-                    ServiceNumber: 0,
-                    ServiceName: '',
-                    Remarks: '',
-                    signupid: loginid
-                });
-
+                const response = await axios.get('https://localhost:44372/Service/ServiceList');
                 if (response.data.success) {
                     setServiceList(response.data.serviceList);
                 } else {
@@ -42,23 +28,22 @@ export default function ServiceList() {
         };
 
         fetchData();
-    }, [loginid]);
+    }, []);
 
     const handleEditClick = (service) => {
-        setCurrentService({ ...service });
+        setCurrentService(service);
         setShowModal(true);
     };
 
     const handleDelete = async (serviceNumber) => {
         try {
             const response = await axios.post('https://localhost:44372/Service/DeleteSerNumById', {
-                CRUDType: 4, // Delete operation
+                CRUDType: 4,
                 ServiceNumber: serviceNumber,
                 ServiceName: '',
                 Remarks: '',
                 signupid: 0
             });
-
             if (response.data.success) {
                 // Remove the deleted service from the serviceList
                 setServiceList(serviceList.filter(service => service.servicenumber !== serviceNumber));
@@ -70,26 +55,22 @@ export default function ServiceList() {
         }
     };
 
+
     const handleClose = () => {
         setShowModal(false);
-        setCurrentService({
-            servicename: '',
-            servicenumber: '',
-            remarks: ''
-        });
+        setCurrentService(null);
     };
 
     const handleSave = async () => {
         try {
             const response = await axios.post('https://localhost:44372/Service/UpdateService', {
                 ...currentService,
-                CRUDType: 5 // Update operation
+                CRUDType: 5 // Assuming 2 is for update
             });
-
             if (response.data.success) {
                 // Update the serviceList with the updated service
                 setServiceList(serviceList.map(service =>
-                    service.servicenumber === currentService.servicenumber ? currentService : service
+                    service.serviceid === currentService.serviceid ? currentService : service
                 ));
                 handleClose();
             } else {
@@ -131,14 +112,21 @@ export default function ServiceList() {
                             </td>
                             <td>{service.remarks}</td>
                             <td>
-                                <div className="row text-center fa-icon_area">
-                                    <div className="col-md-3">
-                                        <FaEdit onClick={() => handleEditClick(service)} />
+                                <button
+                                    type="button"
+                                    className="btn btn-link area_edit_main"
+                                    id="area_edit_main"
+                                    
+                                >
+                                    <div className="row text-center fa-icon_area">
+                                        <div className="col-md-3">
+                                            <FaEdit onClick={() => handleEditClick(service)}/>
+                                        </div>
+                                        <div className="col-md-3">
+                                            <FaTrash onClick={() => handleDelete(service.servicenumber)} />
+                                        </div>
                                     </div>
-                                    <div className="col-md-3">
-                                        <FaTrash onClick={() => handleDelete(service.servicenumber)} />
-                                    </div>
-                                </div>
+                                </button>
                             </td>
                         </tr>
                     ))}
@@ -155,7 +143,7 @@ export default function ServiceList() {
                             <Form.Label>Service Name</Form.Label>
                             <Form.Control
                                 type="text"
-                                value={currentService.servicename}
+                                value={currentService?.servicename || ''}
                                 onChange={(e) => setCurrentService({ ...currentService, servicename: e.target.value })}
                             />
                         </Form.Group>
@@ -163,7 +151,7 @@ export default function ServiceList() {
                             <Form.Label>Service Number</Form.Label>
                             <Form.Control
                                 type="number"
-                                value={currentService.servicenumber}
+                                value={currentService?.servicenumber || ''}
                                 onChange={(e) => setCurrentService({ ...currentService, servicenumber: e.target.value })}
                             />
                         </Form.Group>
@@ -171,7 +159,7 @@ export default function ServiceList() {
                             <Form.Label>Remarks</Form.Label>
                             <Form.Control
                                 type="text"
-                                value={currentService.remarks}
+                                value={currentService?.remarks || ''}
                                 onChange={(e) => setCurrentService({ ...currentService, remarks: e.target.value })}
                             />
                         </Form.Group>

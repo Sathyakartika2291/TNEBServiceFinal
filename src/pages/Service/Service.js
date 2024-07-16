@@ -57,7 +57,8 @@ export default function Service() {
 
                 if (response.data.success) {
                     alert('Service Added successfully!');
-                    navigate('/servicelist');  // Navigate to servicelist.js
+                  //  navigate(`/servicelist/${SignupId}`);  // Navigate to servicelist.js
+                    navigate(`/servicelist/${loginid}`);
                 } else {
                     setErrors({ ...newErrors, customerror: response.data.message });
                 }
