@@ -29,3 +29,6 @@ color:black
 .registerPage{
 background-color:rgb(221, 236, 255);
 }
+.link-margin {
+  margin-right: 10px; /* Adjust the value as needed */
+}

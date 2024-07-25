@@ -1,5 +1,5 @@
 //import react from 'react'
-import './Login.css';
+// import './Login.css';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -67,7 +67,7 @@ export default function Login() {
     };
     return (
         <section className="loginPage">
-            <div className="container-fluid">
+            <div className="container">
                 <div className="login">
                     <div className="container-hed">
                         <h1 className="fw-bolder text-uppercase text-primary text-center p-4">Login Here</h1>

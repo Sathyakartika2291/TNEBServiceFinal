@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,Link } from 'react-router-dom';
 import axios from 'axios';
 import './Service.css';
 import { useParams } from 'react-router-dom';
@@ -126,7 +126,8 @@ export default function Service() {
                         </div>
                         <div className="clearfix"></div>
                         <div className="form-group px-5">
-                            Already have an account? Please <a href="./login">Login</a>
+                        <Link to={`/servicelist/${loginid}`} className="link-margin">View Service</Link>
+                        <Link to={`/`} className="link-margin">Signout</Link>
                         </div>
                     </form>
                 </div>
