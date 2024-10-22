@@ -1,7 +1,7 @@
 //import react from 'react'
 // import './Login.css';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,Link } from 'react-router-dom';
 
 import axios from 'axios';
 export default function Login() {
@@ -108,8 +108,13 @@ export default function Login() {
                         </div>
                         <div className="clearfix"></div>
                         <div className="form-group px-5">
-                            Already have an account? Please <a href="./register">Signup</a>
+                            Already have an account? Please 
+                            <Link to={`/register`} className="link-margin">Signup</Link>
+                            <Link to={`/ServiceCollection`} className="link-margin">ServiceList</Link>
                         </div>
+                        
+        
+    
                     </form>
                 </div>
             </div>
