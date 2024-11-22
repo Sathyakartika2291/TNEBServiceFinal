@@ -114,7 +114,7 @@ export default function ServiceList() {
             <table className="table table-striped hover">
                 <thead>
                     <tr className="text-uppercase">
-                        <th>Service ID</th>
+                        {/* <th>Service ID</th> */}
                         <th>Service Name</th>
                         <th>Service Number</th>
                         <th>Remarks</th>
@@ -124,7 +124,7 @@ export default function ServiceList() {
                 <tbody>
                     {serviceList.map(service => (
                         <tr key={service.serviceid}>
-                            <td>{service.serviceid}</td>
+                            {/* <td>{service.serviceid}</td> */}
                             <td>{service.servicename}</td>
                             <td>
                                 <Link to={`/servicelistbyId/${service.servicenumber}`}>{service.servicenumber}</Link>
